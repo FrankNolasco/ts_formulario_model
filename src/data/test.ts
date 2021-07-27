@@ -1,26 +1,52 @@
-export const TestData = [
+import { IInputPayload } from "types/interfaces";
+
+export const TestData : IInputPayload[] = [
     {
-      name: "fechaIngreso",
-      type: "calendar",
-      required: true,
-      customProps: {
-        yearNavigator: true,
-        monthNavigator: true,
-        yearRange: "2000:2050",
-        minDate: new Date(`01/01/${new Date().getFullYear()}`),
-        maxDate: new Date(),
-      },
+      name: "INPUT",
+      type: "input"
     },
     {
-      name: "dieta_paciente",
-      type: "dropdown-prime",
-      optionsDropdown: [
-        { dieta: "DIETA 1", iddieta: 1 },
-        { dieta: "DIETA 2", iddieta: 2 },
-        { dieta: "DIETA 3", iddieta: 3 }
-      ],
-      optionLabel: "dieta",
-      required: true,
+      name: "IMAGEN",
+      type: "imagen"
     },
-    { name: "observacion", type: "input-description" },
+    {
+      name: "SEARCH",
+      type: "search"
+    },
+    {
+      name: "SWITCH",
+      type: "switch"
+    },
+    {
+      name: "CALENDAR",
+      type: "calendar"
+    },
+    {
+      name: "DROPDOWN",
+      type: "dropdown"
+    },
+    {
+      name: "CHECKBOX",
+      type: "checkbox"
+    },
+    {
+      name: "RADIO BUTTON",
+      type: "radio-button"
+    },
+    {
+      name: "INPUT DESCRIPTION",
+      type: "input-description"
+    },
+    {
+      name: "RADIO BUTTON WITH INPUT",
+      type: "radio-button-input"
+    },
+    {
+      name: "CHECKBOX BUTTON WITH INPUT",
+      type: "checkbox-button-input"
+    },
+    {
+      name: "SWITCH BUTTON WITH INPUT",
+      type: "switch-button-input"
+    },
   ]

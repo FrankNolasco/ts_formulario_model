@@ -12,8 +12,11 @@ export const FormControlStyled = styled(Row)<IFormControlProps>`
     gap: 10px;
   .label-input {
     width: ${(props) => (props.orientation === "column" ? "100%" : "30%")};
-    text-align: ${(props) =>
-      props.orientation === "column" ? "start" : "end"};
+    /* text-align: ${(props) => props.orientation === "column" ? "start" : "end"}; */
+    text-transform: capitalize;
+    strong {
+        color: red;
+    }
   }
   .content-input {
     width: ${(props) => (props.orientation === "column" ? "100%" : "70%")};
