@@ -2,17 +2,21 @@ import { IInputPayload } from "types/interfaces";
 
 export const TestData : IInputPayload[] = [
     {
+      name: "SEARCH",
+      type: "search",
+      fullWidth: true,
+      defaultValue:"HOLA MUNDO YO SOY EL VALOR POR DEFECTO"
+    },
+    {
       name: "INPUT",
-      type: "input"
+      type: "input",
+      defaultValue:"HOLA MUNDO YO SOY EL VALOR POR DEFECTO"
     },
     {
       name: "IMAGEN",
       type: "imagen"
     },
-    {
-      name: "SEARCH",
-      type: "search"
-    },
+    
     {
       name: "SWITCH",
       type: "switch"

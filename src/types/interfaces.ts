@@ -48,3 +48,23 @@ interface FormularioProps {
   onCancel?: Function;
   cancelLabel?: string | JSX.Element;
 }
+
+
+export interface FormProps {
+  title?: string | JSX.Element;
+  formDescription?: string | JSX.Element;
+  descriptions? : JSX.Element | JSX.Element[] | undefined | false;
+  inputs: IInputPayload[];
+  extra?: JSX.Element | JSX.Element[] | undefined | false;
+  fieldOrganization?: "row" | "column";
+  submitLabel? : string | JSX.Element;
+  cancelLabel?: string | JSX.Element;
+  onSubmit: () => void;
+  onCancel?: () => void;
+}
+
+
+export interface GeneralControlProps {
+  rest: IInputPayload;
+  hookForm: any;
+}

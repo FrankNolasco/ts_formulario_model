@@ -1,4 +1,6 @@
-const SwitchInputControl = () => {
+import { GeneralControlProps } from "types/interfaces"
+
+const SwitchInputControl = ({hookForm}:GeneralControlProps) => {
     return (
         <div>
             SwitchInputControl

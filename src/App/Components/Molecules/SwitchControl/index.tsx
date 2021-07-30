@@ -1,9 +1,10 @@
 import { Switch } from "antd"
+import { GeneralControlProps } from "types/interfaces"
 
-const SwitchControl = () => {
+const SwitchControl = ({hookForm}:GeneralControlProps) => {
     return (
         <div>
-           <Switch/> 
+           <Switch onChange={hookForm.field.onChange}/> 
         </div>
     )
 }

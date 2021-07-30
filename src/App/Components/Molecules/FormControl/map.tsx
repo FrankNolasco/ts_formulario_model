@@ -1,3 +1,4 @@
+import { IInputPayload } from "types/interfaces";
 import CalendarControl from "../CalendarControl";
 import CheckBoxControl from "../CheckBoxControl";
 import CheckBoxInputControl from "../CheckBoxInputControl";
@@ -10,19 +11,20 @@ import RadioInputControl from "../RadioInputControl";
 import SearchControl from "../SearchControl";
 import SwitchControl from "../SwitchControl";
 import SwitchInputControl from "../SwitchInputControl";
-export const element = (rest : any) => {
-    return {
-        "input" : <InputControl {...rest}/>,
-        "imagen" : <ImagenControl {...rest}/>,
-        "search" : <SearchControl {...rest}/>,
-        "switch" : <SwitchControl {...rest}/>,
-        "calendar" : <CalendarControl {...rest}/>,
-        "dropdown" : <DropdownControl {...rest}/>,
-        "checkbox" : <CheckBoxControl {...rest}/>,
-        "radio-button" : <RadioControl {...rest}/>,
-        "input-description" : <InputDesControl {...rest}/>,
-        "radio-button-input" : <RadioInputControl {...rest}/>,
-        "checkbox-button-input" : <CheckBoxInputControl {...rest}/>,
-        "switch-button-input" : <SwitchInputControl {...rest}/>,
-    }
-}
+export const element = (rest: IInputPayload, hookForm: any) => {
+  const Props = { rest, hookForm };
+  return {
+    input: <InputControl {...Props} />,
+    imagen: <ImagenControl {...Props} />,
+    search: <SearchControl {...Props} />,
+    switch: <SwitchControl {...Props} />,
+    calendar: <CalendarControl {...Props} />,
+    dropdown: <DropdownControl {...Props} />,
+    checkbox: <CheckBoxControl {...Props} />,
+    "radio-button": <RadioControl {...Props} />,
+    "input-description": <InputDesControl {...Props} />,
+    "radio-button-input": <RadioInputControl {...Props} />,
+    "checkbox-button-input": <CheckBoxInputControl {...Props} />,
+    "switch-button-input": <SwitchInputControl {...Props} />,
+  };
+};

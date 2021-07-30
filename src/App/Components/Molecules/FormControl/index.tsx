@@ -1,6 +1,8 @@
 import { Control } from "./Control";
 import { FormControlStyled } from "./styled";
 import { IInputPayload } from "types/interfaces";
+import { Controller, useFormContext } from "react-hook-form";
+import { useEffect } from "react";
 interface Props extends IInputPayload {
   orientation?: "row" | "column" | undefined;
 }
@@ -10,13 +12,28 @@ const ProcesarLabel = (label: string) =>
     .replaceAll("_", " ")
     .replaceAll("-", " ");
 const FormControl = ({ orientation, ...rest }: Props) => {
+  const { register } = useFormContext();
+
+  useEffect(() => {
+    register(rest.name, {
+      required: typeof rest.required === "undefined" ? false : rest.required,
+    });
+    return () => {};
+  }, []);
+
   return (
-    <FormControlStyled orientation={orientation}>
+    <FormControlStyled orientation={orientation} fullWidth={rest.fullWidth}>
       <strong className="label-input">
         {ProcesarLabel(rest.name)} <strong> {rest.required && "*"} </strong>{" "}
       </strong>
       <div className="content-input">
-        <Control type={rest.type} rest={rest} />
+        <Controller
+          name={rest.name}
+          render={(hookForm) => (
+            <Control type={rest.type} rest={rest} hookForm={hookForm} />
+          )}
+          defaultValue={rest.defaultValue}
+        />
       </div>
     </FormControlStyled>
   );

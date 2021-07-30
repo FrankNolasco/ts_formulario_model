@@ -1,50 +1,59 @@
-import { Button, Card, Descriptions } from "antd";
+import { Button } from "antd";
+import { useEffect } from "react";
+import { useForm, FormProvider } from "react-hook-form";
+import { IInputPayload, FormProps } from "types/interfaces";
 import FormControl from "App/Components/Molecules/FormControl";
-import { TestData } from "data/test";
-import { Grid, Column, Row, Div } from "mylibs/Util-Styled-Components/src";
-import { useForm } from "react-hook-form";
-import { IInputPayload } from "types/interfaces";
+import {
+  Grid,
+  Column,
+  Row,
+  Div,
+  Heading,
+  Typography,
+} from "mylibs/Util-Styled-Components/src";
 
-const Formulario = () => {
-  const { register, handleSubmit, setValue } = useForm();
-  const onSubmit = (data: any) => {
-    console.log(data);
-  };
+
+const Formulario = ({
+  descriptions,
+  extra,
+  inputs,
+  title,
+  formDescription,
+  fieldOrganization = "column",
+  onSubmit,
+  onCancel,
+  submitLabel = "Guardar",
+  cancelLabel = "Cancelar",
+}: FormProps) => {
+  const methods = useForm();
 
   return (
     <Div width="80%" margin="auto" padding="1.5rem">
-        <div>
-            <h2>DAR ALTA PACIENTE</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt excepturi modi atque perspiciatis, maiores porro omnis ut ullam, 
-                in consequatur provident, dolorum cum perferendis magni. Molestias velit modi ipsa laboriosam.</p>
-        </div>
-      <form>
-        <Column gap="10px">
-            <Descriptions bordered>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-          </Descriptions>
-          <Grid childWidth="30rem" gap="20px">
-            {TestData.map((el: IInputPayload) => (
-              <FormControl {...el} orientation="column"/>
-            ))}
-          </Grid>
-          <Descriptions bordered>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-            <Descriptions.Item label="I am label">This is a description</Descriptions.Item>
-          </Descriptions>
-          <Row style={{ alignSelf: "flex-end" }} gap="10px">
-            <Button type="link">Cancelar</Button>
-            <Button type="primary">Guardar</Button>
-          </Row>
-        </Column>
-      </form>
+      <Div>
+        <Heading variant="h2">{title}</Heading>
+        <Typography variant="p">{formDescription}</Typography>
+      </Div>
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(onSubmit)}>
+          <Column gap="10px">
+            {descriptions && descriptions}
+            <Grid childWidth="30rem" gap="20px">
+              {inputs.map((el: IInputPayload, key: number) => (
+                <FormControl
+                  key={key}
+                  {...el}
+                  orientation={fieldOrganization}
+                />
+              ))}
+            </Grid>
+            {extra && extra}
+            <Row style={{ alignSelf: "flex-end" }} gap="10px">
+              <Button type="link">{cancelLabel}</Button>
+              <Button type="primary" htmlType="submit">{submitLabel}</Button>
+            </Row>
+          </Column>
+        </form>
+      </FormProvider>
     </Div>
   );
 };

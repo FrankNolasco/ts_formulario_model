@@ -1,10 +1,11 @@
 import { Input, Radio } from "antd"
 import { Row } from "mylibs/Util-Styled-Components/src"
+import { GeneralControlProps } from "types/interfaces"
 
-const RadioInputControl = () => {
+const RadioInputControl = ({hookForm}:GeneralControlProps) => {
     return (
         <Row>
-            <Radio.Group>
+            <Radio.Group onChange={hookForm.field.onChange}>
                 <Radio value={1}>
                     SI
                 </Radio>

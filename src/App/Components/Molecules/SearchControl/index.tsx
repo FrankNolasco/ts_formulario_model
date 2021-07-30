@@ -1,9 +1,10 @@
 import { Input } from "antd"
+import { GeneralControlProps } from "types/interfaces"
 
-const SearchControl = () => {
+const SearchControl = ({hookForm}:GeneralControlProps) => {
     return (
         <div>
-            <Input.Search/>
+            <Input.Search onChange={hookForm.field.onChange}/>
         </div>
     )
 }
