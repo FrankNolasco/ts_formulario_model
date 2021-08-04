@@ -1,13 +1,23 @@
 import { Row } from "mylibs/Util-Styled-Components/src";
-import styled from "styled-components";
+import styled, {keyframes} from "styled-components";
 
 interface IFormControlProps {
   orientation?: "row" | "column" | undefined;
   fullWidth?: boolean;
 }
 
+export const Bounds = keyframes`
+ from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+`
+
 export const FormControlStyled = styled(Row)<IFormControlProps>`
   display: flex;
+  position: relative;
   flex-direction: ${(props) =>
     props.orientation === "column" ? "column" : "row"};
     gap: 10px;
@@ -24,4 +34,10 @@ export const FormControlStyled = styled(Row)<IFormControlProps>`
   .content-input {
     width: ${(props) => (props.orientation === "column" ? "100%" : "70%")};
   }
+  .error-message {
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
 `;
+

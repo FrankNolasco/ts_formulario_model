@@ -1,17 +1,16 @@
-import { Radio } from "antd"
-import { GeneralControlProps } from "types/interfaces"
+import { Radio } from "antd";
+import { GeneralControlProps } from "types/interfaces";
 
-const RadioControl = ({ hookForm }:GeneralControlProps) => {
-    return (
-        <Radio.Group onChange={hookForm.field.onChange}>
-            <Radio value={1}>
-                SI
-            </Radio>
-            <Radio value={2}>
-                NO
-            </Radio>            
-        </Radio.Group>
-    )
-}
+const RadioControl = ({ hookForm, rest }: GeneralControlProps) => {
+  return (
+    <Radio.Group
+      onChange={hookForm.field.onChange}
+      defaultValue={rest.defaultValue}
+    >
+      <Radio value={1}>SI</Radio>
+      <Radio value={2}>NO</Radio>
+    </Radio.Group>
+  );
+};
 
-export default RadioControl
+export default RadioControl;

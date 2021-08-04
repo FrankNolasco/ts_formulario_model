@@ -1,12 +1,14 @@
-import TextArea from "antd/lib/input/TextArea"
-import { GeneralControlProps } from "types/interfaces"
+import TextArea from "antd/lib/input/TextArea";
+import { GeneralControlProps } from "types/interfaces";
 
-const InputDesControl = ({hookForm}:GeneralControlProps) => {
+const InputDesControl = ({ hookForm, rest }: GeneralControlProps) => {
     return (
-        <div>
-            <TextArea autoSize onChange={hookForm.field.onChange}/>
-        </div>
-    )
-}
+        <TextArea
+        autoSize
+        onChange={hookForm.field.onChange}
+        defaultValue={rest.defaultValue}
+        />
+    );
+};
 
-export default InputDesControl
+export default InputDesControl;

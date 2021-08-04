@@ -3,6 +3,8 @@ import { FormControlStyled } from "./styled";
 import { IInputPayload } from "types/interfaces";
 import { Controller, useFormContext } from "react-hook-form";
 import { useEffect } from "react";
+import { ErrorMessage } from "@hookform/error-message";
+import { Badge } from "antd";
 interface Props extends IInputPayload {
   orientation?: "row" | "column" | undefined;
 }
@@ -12,8 +14,10 @@ const ProcesarLabel = (label: string) =>
     .replaceAll("_", " ")
     .replaceAll("-", " ");
 const FormControl = ({ orientation, ...rest }: Props) => {
-  const { register } = useFormContext();
-
+  const {
+    register,
+    formState: { errors },
+  } = useFormContext();
   useEffect(() => {
     register(rest.name, {
       required: typeof rest.required === "undefined" ? false : rest.required,
@@ -24,7 +28,7 @@ const FormControl = ({ orientation, ...rest }: Props) => {
   return (
     <FormControlStyled orientation={orientation} fullWidth={rest.fullWidth}>
       <strong className="label-input">
-        {ProcesarLabel(rest.name)} <strong> {rest.required && "*"} </strong>{" "}
+        {ProcesarLabel(rest.name)} <strong> {rest.required && "*"} </strong>
       </strong>
       <div className="content-input">
         <Controller
@@ -35,6 +39,13 @@ const FormControl = ({ orientation, ...rest }: Props) => {
           defaultValue={rest.defaultValue}
         />
       </div>
+      {errors[rest.name] && <div className="error-message">
+        <ErrorMessage
+          errors={errors}
+          name={rest.name}
+          render={({ message }) => <Badge.Ribbon text="Campo obligatorio" color="#ff4800"/>}
+        />
+      </div>}
     </FormControlStyled>
   );
 };

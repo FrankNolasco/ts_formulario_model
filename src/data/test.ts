@@ -1,5 +1,5 @@
 import { IInputPayload } from "types/interfaces";
-
+const required = true
 export const TestData : IInputPayload[] = [
     {
       name: "SEARCH",
@@ -10,11 +10,13 @@ export const TestData : IInputPayload[] = [
     {
       name: "INPUT",
       type: "input",
-      defaultValue:"HOLA MUNDO YO SOY EL VALOR POR DEFECTO"
+      defaultValue:"HOLA MUNDO YO SOY EL VALOR POR DEFECTO",
+      required
     },
     {
       name: "IMAGEN",
-      type: "imagen"
+      type: "imagen",
+      required
     },
     
     {

@@ -1,12 +1,13 @@
-import { Input } from "antd"
-import { GeneralControlProps } from "types/interfaces"
+import { Input } from "antd";
+import { GeneralControlProps } from "types/interfaces";
 
-const SearchControl = ({hookForm}:GeneralControlProps) => {
-    return (
-        <div>
-            <Input.Search onChange={hookForm.field.onChange}/>
-        </div>
-    )
-}
+const SearchControl = ({ hookForm, rest }: GeneralControlProps) => {
+  return (
+    <Input.Search
+      onChange={hookForm.field.onChange}
+      defaultValue={rest.defaultValue}
+    />
+  );
+};
 
-export default SearchControl
+export default SearchControl;

@@ -19,7 +19,6 @@ const Formulario = ({
   inputs,
   title,
   formDescription,
-  fieldOrganization = "column",
   onSubmit,
   onCancel,
   submitLabel = "Guardar",
@@ -37,12 +36,12 @@ const Formulario = ({
         <form onSubmit={methods.handleSubmit(onSubmit)}>
           <Column gap="10px">
             {descriptions && descriptions}
-            <Grid childWidth="30rem" gap="20px">
+            <Grid childWidth="30rem" gap="30px">
               {inputs.map((el: IInputPayload, key: number) => (
                 <FormControl
                   key={key}
                   {...el}
-                  orientation={fieldOrganization}
+                  orientation={"column"}
                 />
               ))}
             </Grid>
