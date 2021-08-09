@@ -2,10 +2,9 @@ import Select from "react-dropdown-select";
 import { GeneralControlProps } from "types/interfaces";
 
 const DropdownControl = ({hookForm, rest}: GeneralControlProps) => {
-  
   return (
     <Select
-      values={[]}
+      values={hookForm.field.value}
       options={[
         { name: "frank" },
         { name: "gogeta" },
@@ -13,12 +12,13 @@ const DropdownControl = ({hookForm, rest}: GeneralControlProps) => {
         { name: "goku ssj 2" },
       ]}
       labelField="name"
+      valueField="name"
       searchBy="name"
       dropdownGap={5}
       clearable
       searchable
       dropdownPosition="auto"
-      onChange={hookForm.onChange}
+      onChange={hookForm.field.onChange}
     />
   );
 };
