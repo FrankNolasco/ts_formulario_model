@@ -47,6 +47,7 @@ export interface FormProps {
   cancelLabel?: string | JSX.Element;
   onSubmit: () => void;
   onCancel?: () => void;
+  width: string;
 }
 
 

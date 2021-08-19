@@ -8,6 +8,7 @@ const App = () => {
       formDescription="Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sunt excepturi modi atque perspiciatis, maiores porro omnis ut ullam, in consequatur provident, dolorum cum perferendis magni. Molestias velit modi ipsa laboriosam."
       inputs={TestData}
       onSubmit={(data) => {console.log(data)}}
+      width="80%"
     />
   );
 };

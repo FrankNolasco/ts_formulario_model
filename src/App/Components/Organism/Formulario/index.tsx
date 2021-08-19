@@ -11,7 +11,6 @@ import {
   Typography,
 } from "mylibs/Util-Styled-Components/src";
 
-
 const Formulario = ({
   descriptions,
   extra,
@@ -22,11 +21,11 @@ const Formulario = ({
   onCancel,
   submitLabel = "Guardar",
   cancelLabel = "Cancelar",
+  width = "100%"
 }: FormProps) => {
   const methods = useForm();
-
   return (
-    <Div width="80%" margin="auto" padding="1.5rem">
+    <Div width={ width } margin="auto" padding="1.5rem">
       <Div margin="0 0 15px 0">
         <Heading variant="h2">{title}</Heading>
         <Typography variant="p">{formDescription}</Typography>
