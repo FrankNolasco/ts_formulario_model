@@ -1,4 +1,4 @@
-import { IInputPayload } from "types/interfaces";
+import { IInputPayload } from "../../../../types/interfaces";
 import CalendarControl from "../CalendarControl";
 import CheckBoxControl from "../CheckBoxControl";
 import CheckBoxInputControl from "../CheckBoxInputControl";

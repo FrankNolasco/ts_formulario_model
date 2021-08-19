@@ -1,5 +1,5 @@
 import Select from "react-dropdown-select";
-import { GeneralControlProps } from "types/interfaces";
+import { GeneralControlProps } from "../../../../types/interfaces";
 
 const DropdownControl = ({hookForm, rest}: GeneralControlProps) => {
   return (

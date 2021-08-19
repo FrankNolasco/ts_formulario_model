@@ -1,5 +1,5 @@
 import { Switch } from "antd"
-import { GeneralControlProps } from "types/interfaces"
+import { GeneralControlProps } from "../../../../types/interfaces"
 
 const SwitchControl = ({hookForm,rest}:GeneralControlProps) => {
     return (

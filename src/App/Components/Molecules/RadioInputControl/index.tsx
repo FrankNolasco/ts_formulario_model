@@ -1,6 +1,6 @@
 import { Input, Radio } from "antd";
 import { Row } from "mylibs/Util-Styled-Components/src";
-import { GeneralControlProps } from "types/interfaces";
+import { GeneralControlProps } from "../../../../types/interfaces";
 
 const RadioInputControl = ({ hookForm, rest }: GeneralControlProps) => {
   return (

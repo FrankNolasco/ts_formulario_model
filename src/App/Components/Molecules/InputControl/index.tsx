@@ -1,5 +1,5 @@
 import { Input } from "antd";
-import { GeneralControlProps } from "types/interfaces";
+import { GeneralControlProps } from "../../../../types/interfaces";
 
 const InputControl = ({ rest, hookForm }: GeneralControlProps) => {
   return (

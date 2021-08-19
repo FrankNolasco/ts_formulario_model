@@ -1,6 +1,6 @@
 import { Checkbox, Input } from "antd";
 import { Row } from "mylibs/Util-Styled-Components/src";
-import { GeneralControlProps } from "types/interfaces";
+import { GeneralControlProps } from "../../../../types/interfaces";
 
 const plainOptions = ["Apple", "Pear", "Orange"];
 const CheckBoxInputControl = ({ hookForm, rest }: GeneralControlProps) => {

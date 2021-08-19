@@ -1,6 +1,6 @@
 import { Control } from "./Control";
 import { FormControlStyled } from "./styled";
-import { IInputPayload } from "types/interfaces";
+import { IInputPayload } from "../../../../types/interfaces";
 import { Controller, useFormContext } from "react-hook-form";
 import { useEffect } from "react";
 import { ErrorMessage } from "@hookform/error-message";

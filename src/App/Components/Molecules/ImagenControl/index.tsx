@@ -1,5 +1,5 @@
 import { Image } from "antd";
-import { GeneralControlProps } from "types/interfaces";
+import { GeneralControlProps } from "../../../../types/interfaces";
 import { ImagenControlStyled, InputButton } from "./styled";
 
 const ImagenControl = ({ hookForm, rest }: GeneralControlProps) => {

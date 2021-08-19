@@ -1,5 +1,5 @@
 import TextArea from "antd/lib/input/TextArea";
-import { GeneralControlProps } from "types/interfaces";
+import { GeneralControlProps } from "../../../../types/interfaces";
 
 const InputDesControl = ({ hookForm, rest }: GeneralControlProps) => {
     return (

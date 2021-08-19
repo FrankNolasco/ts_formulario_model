@@ -1,5 +1,5 @@
 import { DatePicker } from "antd";
-import { GeneralControlProps } from "types/interfaces";
+import { GeneralControlProps } from "../../../../types/interfaces";
 
 const CalendarControl = ({ hookForm, rest }: GeneralControlProps) => {
   return (

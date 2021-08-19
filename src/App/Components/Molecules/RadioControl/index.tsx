@@ -1,5 +1,5 @@
 import { Radio } from "antd";
-import { GeneralControlProps } from "types/interfaces";
+import { GeneralControlProps } from "../../../../types/interfaces";
 
 const RadioControl = ({ hookForm, rest }: GeneralControlProps) => {
   return (

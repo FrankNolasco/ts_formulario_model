@@ -1,4 +1,4 @@
-import { ControlType, IInputPayload } from "types/interfaces"
+import { ControlType, IInputPayload } from "../../../../types/interfaces"
 import { element } from "./map"
 
 interface Props {

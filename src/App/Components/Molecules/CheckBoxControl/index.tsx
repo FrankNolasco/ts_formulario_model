@@ -1,5 +1,5 @@
 import { Checkbox } from "antd"
-import { GeneralControlProps } from "types/interfaces";
+import { GeneralControlProps } from "../../../../types/interfaces";
 
 const plainOptions = ['Apple', 'Pear', 'Orange'];
 
