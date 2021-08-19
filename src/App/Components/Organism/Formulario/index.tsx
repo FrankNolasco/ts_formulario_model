@@ -1,5 +1,4 @@
 import { Button } from "antd";
-import { useEffect } from "react";
 import { useForm, FormProvider } from "react-hook-form";
 import { IInputPayload, FormProps } from "types/interfaces";
 import FormControl from "App/Components/Molecules/FormControl";
@@ -28,7 +27,7 @@ const Formulario = ({
 
   return (
     <Div width="80%" margin="auto" padding="1.5rem">
-      <Div>
+      <Div margin="0 0 15px 0">
         <Heading variant="h2">{title}</Heading>
         <Typography variant="p">{formDescription}</Typography>
       </Div>

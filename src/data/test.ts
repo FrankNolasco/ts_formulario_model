@@ -1,12 +1,12 @@
 import { IInputPayload } from "types/interfaces";
 const required = true
 export const TestData : IInputPayload[] = [
-    {
-      name: "SEARCH",
-      type: "search",
-      fullWidth: true,
-      defaultValue:"HOLA MUNDO YO SOY EL VALOR POR DEFECTO"
-    },
+    // {
+    //   name: "SEARCH",
+    //   type: "search",
+    //   fullWidth: true,
+    //   defaultValue:"HOLA MUNDO YO SOY EL VALOR POR DEFECTO"
+    // },
     {
       name: "INPUT",
       type: "input",

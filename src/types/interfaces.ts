@@ -9,7 +9,7 @@ export interface IReducerNotifyStore {
 
 export type ControlType = "input"
 | "imagen"
-| "search"
+// | "search"
 | "switch"
 | "calendar"
 | "dropdown"
@@ -36,20 +36,6 @@ export interface IInputPayload {
   disabled?: boolean;
   fullWidth?: boolean;
 }
-interface FormularioProps {
-  inputs: IInputPayload[];
-  submitAction: Function;
-  submitLabel?: string | JSX.Element;
-  title?: string | JSX.Element;
-  getValue?: Function;
-  descripcions?: JSX.Element | undefined | false;
-  extra?: JSX.Element | undefined | false;
-  elementType?: "row" | "column";
-  onCancel?: Function;
-  cancelLabel?: string | JSX.Element;
-}
-
-
 export interface FormProps {
   title?: string | JSX.Element;
   formDescription?: string | JSX.Element;

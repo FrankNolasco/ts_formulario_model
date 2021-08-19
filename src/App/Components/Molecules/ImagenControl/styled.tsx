@@ -11,3 +11,15 @@ export const ImagenControlStyled = styled(Row)`
         font-size: 11px;
     }
 `
+
+export const InputButton = styled.div`
+    input {
+        display:none;
+    }
+    label {
+        background-color: #1890ff;
+        color: white;
+        padding: 2px 8px;
+        border-radius: 2px;
+    }
+`
