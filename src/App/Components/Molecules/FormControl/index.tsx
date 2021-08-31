@@ -3,7 +3,6 @@ import { FormControlStyled } from "./styled";
 import { IInputPayload } from "../../../../types/interfaces";
 import { Controller, useFormContext } from "react-hook-form";
 import { useEffect } from "react";
-import { ErrorMessage } from "@hookform/error-message";
 import { Badge } from "antd";
 interface Props extends IInputPayload {
   orientation?: "row" | "column" | undefined;
@@ -39,13 +38,13 @@ const FormControl = ({ orientation, ...rest }: Props) => {
           defaultValue={rest.defaultValue}
         />
       </div>
-      {errors[rest.name] && <div className="error-message">
+      {/* {errors[rest.name] && <div className="error-message">
         <ErrorMessage
           errors={errors}
           name={rest.name}
           render={({ message }) => <Badge.Ribbon text="Campo obligatorio" color="#ff4800"/>}
         />
-      </div>}
+      </div>} */}
     </FormControlStyled>
   );
 };

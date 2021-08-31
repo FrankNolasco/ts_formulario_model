@@ -45,9 +45,9 @@ export interface FormProps {
   fieldOrganization?: "row" | "column";
   submitLabel? : string | JSX.Element;
   cancelLabel?: string | JSX.Element;
-  onSubmit: () => void;
+  onSubmit: (data? : any) => void;
   onCancel?: () => void;
-  width: string;
+  width?: string;
 }
 
 

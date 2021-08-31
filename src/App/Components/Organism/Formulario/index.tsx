@@ -1,7 +1,7 @@
 import { Button } from "antd";
 import { useForm, FormProvider } from "react-hook-form";
 import { IInputPayload, FormProps } from "../../../../types/interfaces";
-import FormControl from "App/Components/Molecules/FormControl";
+import FormControl from "../../Molecules/FormControl";
 import {
   Grid,
   Column,
