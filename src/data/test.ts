@@ -29,7 +29,11 @@ export const TestData : IInputPayload[] = [
     },
     {
       name: "DROPDOWN",
-      type: "dropdown"
+      type: "dropdown",
+      optionsDropdown: [{name:"Hola",edad:"10"},{name:"Holaw",edad:"10"},{name:"dasdaHola",edad:"10"},{name:"Hasdasdasola",edad:"10"}],
+      optionValue:"name",
+      optionLabel: "name",
+      defaultValue: [{name:"Hola",edad:"10"}]
     },
     {
       name: "CHECKBOX",

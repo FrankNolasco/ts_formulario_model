@@ -3,7 +3,6 @@ import { FormControlStyled } from "./styled";
 import { IInputPayload } from "../../../../types/interfaces";
 import { Controller, useFormContext } from "react-hook-form";
 import { useEffect } from "react";
-import { Badge } from "antd";
 interface Props extends IInputPayload {
   orientation?: "row" | "column" | undefined;
 }
