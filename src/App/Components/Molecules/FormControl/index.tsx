@@ -26,7 +26,7 @@ const FormControl = ({ orientation, ...rest }: Props) => {
   }, []);
 
   return (
-    <FormControlStyled orientation={orientation} fullWidth={rest.fullWidth}>
+    <FormControlStyled orientation={orientation} fullWidth={rest.fullWidth} disabled = {rest.disabled}>
       <strong className="label-input">
         {ProcesarLabel(rest.name)} <strong> {rest.required && "*"} </strong>
       </strong>

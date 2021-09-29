@@ -8,12 +8,23 @@ const CheckBoxInputControl = ({ hookForm, rest }: GeneralControlProps) => {
     <Row gap="10px">
       <Checkbox.Group
         options={plainOptions}
-        defaultValue={rest.defaultValue ? rest.defaultValue.checkbox : undefined}
-        onChange={ (values) => hookForm.field.onChange({...hookForm.field.value, checkbox: values })}
+        defaultValue={
+          rest.defaultValue ? rest.defaultValue.checkbox : undefined
+        }
+        onChange={(values) => {
+          const valChange = { ...hookForm.field.value, checkbox: values };
+          rest.onChange && rest.onChange(valChange);
+          hookForm.field.onChange(valChange);
+        }}
       />
       <Input
-        onChange={ (e) => hookForm.field.onChange({...hookForm.field.value, input: e.target.value })}
-        defaultValue={ rest.defaultValue ? rest.defaultValue.input : undefined }
+        onChange={(e) =>
+          hookForm.field.onChange({
+            ...hookForm.field.value,
+            input: e.target.value,
+          })
+        }
+        defaultValue={rest.defaultValue ? rest.defaultValue.input : undefined}
       />
     </Row>
   );

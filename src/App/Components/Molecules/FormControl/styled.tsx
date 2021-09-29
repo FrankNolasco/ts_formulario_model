@@ -4,6 +4,7 @@ import styled, {keyframes} from "styled-components";
 interface IFormControlProps {
   orientation?: "row" | "column" | undefined;
   fullWidth?: boolean;
+  disabled?: boolean;
 }
 
 export const Bounds = keyframes`
@@ -16,12 +17,11 @@ export const Bounds = keyframes`
 `
 
 export const FormControlStyled = styled(Row)<IFormControlProps>`
-  display: flex;
+  display: ${props => props.disabled ? "none" : "flex"} ;
   position: relative;
-  flex-direction: ${(props) =>
-    props.orientation === "column" ? "column" : "row"};
-    gap: 10px;
-
+  flex-direction: ${(props) => props.orientation === "column" ? "column" : "row"};
+  gap: 10px;
+  
   grid-column: ${props => props.fullWidth ? '1/3' : "auto"};
   .label-input {
     width: ${(props) => (props.orientation === "column" ? "100%" : "30%")};
