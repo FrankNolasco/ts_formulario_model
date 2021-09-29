@@ -1,11 +1,11 @@
 import Select from "react-dropdown-select";
 import { GeneralControlProps } from "../../../../types/interfaces";
 
-const DropdownControl = ({hookForm, rest}: GeneralControlProps) => {
+const DropdownControl = ({ hookForm, rest }: GeneralControlProps) => {
   return (
     <div>
-      {
-        rest.optionsDropdown ?  <Select
+      {rest.optionsDropdown ? (
+        <Select
           values={hookForm.field.value}
           options={rest.optionsDropdown}
           labelField={rest.optionLabel}
@@ -13,14 +13,18 @@ const DropdownControl = ({hookForm, rest}: GeneralControlProps) => {
           searchBy={rest.optionLabel}
           dropdownGap={5}
           clearable
-          searchable  
+          searchable
           dropdownPosition="auto"
-          onChange={hookForm.field.onChange}
-          { ...rest.customProps }
-        /> : "Problema al carga este elemento..."
-      }
+          onChange={(e) => {
+            rest.onChange && rest.onChange(e);
+            hookForm.field.onChange(e);
+          }}
+          {...rest.customProps}
+        />
+      ) : (
+        "Problema al carga este elemento..."
+      )}
     </div>
-    
   );
 };
 

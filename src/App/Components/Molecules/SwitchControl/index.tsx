@@ -1,12 +1,18 @@
-import { Switch } from "antd"
-import { GeneralControlProps } from "../../../../types/interfaces"
+import { Switch } from "antd";
+import { GeneralControlProps } from "../../../../types/interfaces";
 
-const SwitchControl = ({hookForm,rest}:GeneralControlProps) => {
-    return (
-        <div>
-           <Switch onChange={hookForm.field.onChange} defaultChecked={rest.defaultValue}/> 
-        </div>
-    )
-}
+const SwitchControl = ({ hookForm, rest }: GeneralControlProps) => {
+  return (
+    <div>
+      <Switch
+        onChange={(e) => {
+          rest.onChange && rest.onChange(e);
+          hookForm.field.onChange(e);
+        }}
+        defaultChecked={rest.defaultValue}
+      />
+    </div>
+  );
+};
 
-export default SwitchControl
+export default SwitchControl;

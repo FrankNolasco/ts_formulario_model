@@ -14,6 +14,7 @@ const ProcesarLabel = (label: string) =>
 const FormControl = ({ orientation, ...rest }: Props) => {
   const {
     register,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     formState: { errors },
   } = useFormContext();
   useEffect(() => {
@@ -21,6 +22,7 @@ const FormControl = ({ orientation, ...rest }: Props) => {
       required: typeof rest.required === "undefined" ? false : rest.required,
     });
     return () => {};
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
@@ -37,13 +39,6 @@ const FormControl = ({ orientation, ...rest }: Props) => {
           defaultValue={rest.defaultValue}
         />
       </div>
-      {/* {errors[rest.name] && <div className="error-message">
-        <ErrorMessage
-          errors={errors}
-          name={rest.name}
-          render={({ message }) => <Badge.Ribbon text="Campo obligatorio" color="#ff4800"/>}
-        />
-      </div>} */}
     </FormControlStyled>
   );
 };

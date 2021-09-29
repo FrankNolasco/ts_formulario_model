@@ -5,7 +5,10 @@ const InputControl = ({ rest, hookForm }: GeneralControlProps) => {
   return (
     <div>
       <Input
-        onChange={hookForm.field.onChange}
+        onChange={(e) => {
+          rest.onChange && rest.onChange(e);
+          hookForm.field.onChange(e);
+        }}
         defaultValue={rest.defaultValue}
       />
     </div>

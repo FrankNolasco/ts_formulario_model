@@ -5,7 +5,9 @@ import { ImagenControlStyled, InputButton } from "./styled";
 const ImagenControl = ({ hookForm, rest }: GeneralControlProps) => {
   return (
     <ImagenControlStyled>
-      {hookForm.field.value && hookForm.field.value.length > 0 && <Image src={URL.createObjectURL(hookForm.field.value[0])} />}
+      {hookForm.field.value && hookForm.field.value.length > 0 && (
+        <Image src={URL.createObjectURL(hookForm.field.value[0])} />
+      )}
       <InputButton>
         <input
           type="file"
@@ -14,9 +16,7 @@ const ImagenControl = ({ hookForm, rest }: GeneralControlProps) => {
           onChange={(e) => hookForm.field.onChange(e.target.files)}
           defaultValue={rest.defaultValue}
         />
-        <label htmlFor={rest.name}>
-          SELECCIONAR
-        </label>
+        <label htmlFor={rest.name}>SELECCIONAR</label>
       </InputButton>
     </ImagenControlStyled>
   );
