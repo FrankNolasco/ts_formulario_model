@@ -1,6 +1,7 @@
+import { DatePicker } from "antd";
 import { Row } from "mylibs/Util-Styled-Components/src";
+import Select from "react-dropdown-select";
 import styled, {keyframes} from "styled-components";
-
 interface IFormControlProps {
   orientation?: "row" | "column" | undefined;
   fullWidth?: boolean;
@@ -21,11 +22,9 @@ export const FormControlStyled = styled(Row)<IFormControlProps>`
   position: relative;
   flex-direction: ${(props) => props.orientation === "column" ? "column" : "row"};
   gap: 10px;
-  
   grid-column: ${props => props.fullWidth ? '1/3' : "auto"};
   .label-input {
     width: ${(props) => (props.orientation === "column" ? "100%" : "30%")};
-    /* text-align: ${(props) => props.orientation === "column" ? "start" : "end"}; */
     text-transform: capitalize;
     strong {
         color: red;
@@ -41,3 +40,12 @@ export const FormControlStyled = styled(Row)<IFormControlProps>`
   }
 `;
 
+export const DatePickerStyled = styled(DatePicker)`
+  width: 100%;
+`
+
+export const DropdownStyled = styled(Select)`
+  :hover, :focus-within {
+    border-color: #40a9ff !important;
+  }
+`

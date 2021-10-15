@@ -1,10 +1,11 @@
-import { DatePicker } from "antd";
+// import { DatePicker } from "antd";
 import { GeneralControlProps } from "../../../../types/interfaces";
+import { DatePickerStyled } from "../FormControl/styled";
 
 const CalendarControl = ({ hookForm, rest }: GeneralControlProps) => {
   return (
     <div>
-      <DatePicker
+      <DatePickerStyled
         onChange={(e) => {
           rest.onChange && rest.onChange(e);
           hookForm.field.onChange(e);

@@ -1,11 +1,11 @@
-import Select from "react-dropdown-select";
 import { GeneralControlProps } from "../../../../types/interfaces";
+import { DropdownStyled } from "../FormControl/styled";
 
 const DropdownControl = ({ hookForm, rest }: GeneralControlProps) => {
   return (
     <div>
-      {rest.optionsDropdown ? (
-        <Select
+      {rest.optionsDropdown && rest.optionLabel && rest.optionValue ? (
+        <DropdownStyled
           values={hookForm.field.value}
           options={rest.optionsDropdown}
           labelField={rest.optionLabel}

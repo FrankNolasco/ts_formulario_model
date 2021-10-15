@@ -1,5 +1,6 @@
 import { Input, Radio } from "antd";
 import { Row } from "mylibs/Util-Styled-Components/src";
+import { Fragment } from "react";
 import { GeneralControlProps } from "../../../../types/interfaces";
 
 const RadioInputControl = ({ hookForm, rest }: GeneralControlProps) => {
@@ -13,8 +14,18 @@ const RadioInputControl = ({ hookForm, rest }: GeneralControlProps) => {
         }}
         defaultValue={rest.defaultValue ? rest.defaultValue.radio : undefined}
       >
-        <Radio value={1}>SI</Radio>
-        <Radio value={2}>NO</Radio>
+        {rest.optionsDropdown ? (
+          <Fragment>
+            {rest.optionsDropdown.map(
+              (el) =><Radio value={rest.optionValue ? el[rest.optionValue] : el}>{rest.optionLabel ? el[rest.optionLabel] : el}</Radio>
+            )}
+          </Fragment>
+        ) : (
+          <Fragment>
+            <Radio value="SI">SI</Radio>
+            <Radio value="NO">NO</Radio>
+          </Fragment>
+        )}
       </Radio.Group>
       <Input
         onChange={(e) => {

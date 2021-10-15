@@ -37,11 +37,16 @@ export const TestData : IInputPayload[] = [
     },
     {
       name: "CHECKBOX",
-      type: "checkbox"
+      type: "checkbox",
+      optionsDropdown: ["Apple", "Pear", "Orange"],
     },
     {
       name: "RADIO BUTTON",
-      type: "radio-button"
+      type: "radio-button",
+      optionsDropdown: [{name:"Apple"},{name:"Pear"},{name:"GAAAAAAAAAAAA!"}],
+      optionLabel: "name",
+      optionValue: "name",
+      defaultValue: "Hola"
     },
     {
       name: "INPUT DESCRIPTION",
@@ -49,10 +54,15 @@ export const TestData : IInputPayload[] = [
     },
     {
       name: "RADIO BUTTON WITH INPUT",
-      type: "radio-button-input"
+      type: "radio-button-input",
+      optionsDropdown: [{name:"Hola",edad:"10"},{name:"Holaw",edad:"10"},{name:"dasdaHola",edad:"10"}],
+      optionLabel: "name",
+      optionValue:"name",
+      defaultValue:{radio:"Hola"}
     },
     {
       name: "CHECKBOX BUTTON WITH INPUT",
+      optionsDropdown: ["Apple", "Pear", "Orange"],
       type: "checkbox-button-input"
     },
     {
