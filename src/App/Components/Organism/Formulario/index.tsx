@@ -1,3 +1,4 @@
+import { FormProvider, useForm } from "react-hook-form";
 import {
   Div,
   Heading,
@@ -6,15 +7,20 @@ import {
 import FormControls from "../FormControls";
 
 export default function Formulario({children,...restProps}: any) {
+  const methods = useForm();
   return (
     <Div width={restProps.width || "100%"} margin="auto" padding="1.5rem">
-      {children}
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(restProps.onSubmit)}>
+          {children}
+        </form>
+      </FormProvider>
     </Div>
   );
 }
 
-Formulario.Title = ({ children }: any) => (
-  <Heading variant="h2">{children}</Heading>
+Formulario.Title = ({ children, centered }: any) => (
+  <Heading variant="h2" style={{textAlign: centered? "center": "start"}}>{children}</Heading>
 );
 
 Formulario.FormDescription = ({ children }: any) => (

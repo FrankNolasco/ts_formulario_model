@@ -1,4 +1,4 @@
-import { IInputPayload } from "types/interfaces";
+import { IInputPayload } from "../../../../types/interfaces";
 import Formulario from "../Formulario"
 const { Title, FormControls } = Formulario;
 
